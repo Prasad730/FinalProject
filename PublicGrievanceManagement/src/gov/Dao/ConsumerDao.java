@@ -20,9 +20,9 @@ public class ConsumerDao implements IConsumerDao {
 	JdbcTemplate jdbcTemplate;
 
 	public void register(GovtConsumer consumer) {
-		 String sql="insert into GovtConsumer values(?,?,?,?,?,?,?,?)";
+		 String sql="insert into GovtConsumer values(?,?,?,?,?,?,?,?,?)";
 		  jdbcTemplate.update(sql, new Object[]
-		  {consumer.getName(),consumer.getPassword(),consumer.getEmailId(),consumer.
+		  {consumer.getConsumerId(),consumer.getName(),consumer.getPassword(),consumer.getEmailId(),consumer.
 		  getContactNo(),consumer.getSuburb(),consumer.getCity(),consumer.
 		  getAddress_String(),consumer.getPincode()});
 	}

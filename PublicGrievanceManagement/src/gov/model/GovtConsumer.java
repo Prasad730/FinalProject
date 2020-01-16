@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class GovtConsumer {
+	private int ConsumerId;
 private String name;
 private String Password;
 private String EmailId;
@@ -14,6 +15,12 @@ private String Address_String;
 private String Pincode;
 public String getName() {
 	return name;
+}
+public int getConsumerId() {
+	return ConsumerId;
+}
+public void setConsumerId(int consumerId) {
+	ConsumerId = consumerId;
 }
 public void setName(String name) {
 	this.name = name;

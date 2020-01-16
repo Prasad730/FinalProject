@@ -22,14 +22,16 @@ public class RegistrationController {
 	public ModelAndView showRegister(HttpServletRequest request, HttpServletResponse response,
 			@ModelAttribute("consumer") GovtConsumer consumer) {
 		ModelAndView mav = new ModelAndView("register");
-		// mav.addObject("consumer",new GovtConsumer());
-		consumerService.register(consumer);
+		mav.addObject("consumer",new GovtConsumer());
+		//consumerService.register(consumer);
 		return mav;
 	}
 
-	@RequestMapping(value = "/log", method = RequestMethod.GET)
-	public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mav1= new ModelAndView("regi");
+	@RequestMapping(value = "/regsuccess", method = RequestMethod.GET)
+	public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response,@ModelAttribute("consumer") GovtConsumer consumer){
+		ModelAndView mav1= new ModelAndView("registersuccess");
+		mav1.addObject("Name",consumer.getName());
+		consumerService.register(consumer);
 		return mav1;
 	}
 

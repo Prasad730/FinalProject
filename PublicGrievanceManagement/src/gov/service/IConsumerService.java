@@ -6,4 +6,5 @@ import gov.model.Login;
 public interface IConsumerService {
 void register(GovtConsumer consumer);
 GovtConsumer login(Login log);
+
 }

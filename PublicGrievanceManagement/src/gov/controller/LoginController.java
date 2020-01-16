@@ -37,10 +37,11 @@ public class LoginController {
 		{
 			mv=new ModelAndView("welcome");
 			mv.addObject("Name",cons.getName());
+			mv.addObject("sub",cons.getSuburb());
 		}
 		else
 		{
-			mv=new ModelAndView("login");
+			mv=new ModelAndView("error");
 			mv.addObject("message","Username or Password is Wrong!!");
 		}
 		return mv;
