@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form >
-Hello ${Name}, You have successfully registered.
-Now Please login with your  name and password to continue using our services.
-<a href="login.jsp">Back to login</a>
-</form>
+<a href="login.jsp"></a>
 </body>
 </html>

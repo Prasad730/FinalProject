@@ -1,5 +1,7 @@
 package gov.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import gov.Dao.ConsumerDao;
+import gov.model.AreaComplaints;
 import gov.model.GovtConsumer;
 import gov.model.Login;
 import gov.service.ConsumerService;
@@ -19,8 +23,10 @@ import gov.service.ConsumerService;
 public class LoginController {
 	@Autowired
 	 ConsumerService consumerService;
+	@Autowired
+	ConsumerDao consumerDao;
 	
-	@RequestMapping(value="/login", method=RequestMethod.GET)
+	@RequestMapping( method=RequestMethod.GET)
 	public ModelAndView showLogin(HttpServletRequest request,HttpServletResponse response,@ModelAttribute("login") Login log)
 	{
 		ModelAndView mv=new ModelAndView("login");
@@ -38,6 +44,10 @@ public class LoginController {
 			mv=new ModelAndView("welcome");
 			mv.addObject("Name",cons.getName());
 			mv.addObject("sub",cons.getSuburb());
+//			List<AreaComplaints> ac=consumerDao.selection();
+//			//ModelAndView mv=new ModelAndView("welcome");
+//			mv.addObject("AreaName",ac.get(0));
+//			mv.addObject("AreaName1",ac.get(1));
 		}
 		else
 		{
@@ -47,5 +57,14 @@ public class LoginController {
 		return mv;
 	} 
 	
-	
+	@RequestMapping(value="/login", method=RequestMethod.GET)
+	public ModelAndView showComplaints(HttpServletRequest request,HttpServletResponse response)
+	{
+		
+		//mv.addObject("Area",a.getAreaName());
+		List<AreaComplaints> ac=consumerDao.selection();
+		ModelAndView mv=new ModelAndView("welcome");
+		mv.addObject("AreaName",ac.get(0));
+		return mv;
+	}
 }

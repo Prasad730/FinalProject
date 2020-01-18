@@ -1,53 +1,55 @@
 package gov.model;
 
-import java.sql.Blob;
-
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Indexed;
 
 @Component
-public class Complaints {
+public class AreaComplaints {
 
-	private int ComplainId;
-	private String ConsumerName;
 	private int AreaId;
+	private String AreaName;
+	private String Pincode;
+	
 	private int SubAreaId;
+	private String SubAreaName;
+	private int ComplainId;
 	private String Complain_Category;
 	private String Complain_Heading;
 	private String Description;
-	private String Image;
-	private String Affected_Address;
-	
-	public String getAffected_Address() {
-		return Affected_Address;
-	}
-	public void setAffected_Address(String affected_Address) {
-		Affected_Address = affected_Address;
-	}
-	public int getComplainId() {
-		return ComplainId;
-	}
-	public void setComplainId(int complainId) {
-		ComplainId = complainId;
-	}
 	public int getAreaId() {
 		return AreaId;
 	}
-	
-	public String getConsumerName() {
-		return ConsumerName;
-	}
-	public void setConsumerName(String consumerName) {
-		ConsumerName = consumerName;
-	}
 	public void setAreaId(int areaId) {
 		AreaId = areaId;
+	}
+	public String getAreaName() {
+		return AreaName;
+	}
+	public void setAreaName(String areaName) {
+		AreaName = areaName;
+	}
+	public String getPincode() {
+		return Pincode;
+	}
+	public void setPincode(String pincode) {
+		Pincode = pincode;
 	}
 	public int getSubAreaId() {
 		return SubAreaId;
 	}
 	public void setSubAreaId(int subAreaId) {
 		SubAreaId = subAreaId;
+	}
+	public String getSubAreaName() {
+		return SubAreaName;
+	}
+	public void setSubAreaName(String subAreaName) {
+		SubAreaName = subAreaName;
+	}
+	public int getComplainId() {
+		return ComplainId;
+	}
+	public void setComplainId(int complainId) {
+		ComplainId = complainId;
 	}
 	public String getComplain_Category() {
 		return Complain_Category;
@@ -67,12 +69,13 @@ public class Complaints {
 	public void setDescription(String description) {
 		Description = description;
 	}
-	public String getImage() {
-		return Image;
+	@Override
+	public String toString() {
+		return AreaName ;
 	}
-	public void setImage(String image) {
-		Image = image;
-	}
+	
+	
+	
 	
 	
 }
