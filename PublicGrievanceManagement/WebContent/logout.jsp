@@ -5,8 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+
 </head>
-<body>
-<a href="login.jsp"></a>
+<body action="./logout">
+ 
+
+
+<button type="submit" >Click here to log out</button>
+
+
 </body>
 </html>

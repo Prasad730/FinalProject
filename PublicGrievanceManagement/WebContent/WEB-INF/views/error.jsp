@@ -13,5 +13,6 @@
 </head>
 <body>
 <div class="alert alert-danger"><label>${message}</label></div>
+<button type="button"><a href="login.jsp">Login again</a></button>
 </body>
 </html>

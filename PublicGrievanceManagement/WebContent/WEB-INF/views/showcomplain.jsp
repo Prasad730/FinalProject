@@ -19,13 +19,17 @@
 <h2>${name },</h2><h3>your registered complaint looks like: </h3>
 <br/><br/><br/><br/><br/>
 <div align="center">
+${img }
      <h3> Consumer Name: <label>${name }</label><br/><br/>
       Complain Category: <label>${compcat }</label><br/><br/>
       Complain Category: <label>${compheading }</label><br/><br/>
       Complain Description: <label>${desc}</label></h3>
+      
+       Image: <img src="${pageContext.request.contextPath}/resources/images/${img}"></h3>
+       <!--  E:\\FinalProjectBeta\\PublicGrievanceManagement\\WebContent\\images\\${img}  -->
   </div>
   
-  <button type="button"><a href="login.jsp">Logout</a></button>
+  <button type="button"><a href="logout.jsp">Logout</a></button>
 </form>
 </body>
 </html>

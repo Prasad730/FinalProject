@@ -17,6 +17,7 @@ public class Complaints {
 	private String Description;
 	private String Image;
 	private String Affected_Address;
+
 	
 	public String getAffected_Address() {
 		return Affected_Address;

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.tomcat.util.log.UserDataHelper.Mode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import gov.Dao.ConsumerDao;
@@ -20,6 +22,7 @@ import gov.model.Login;
 import gov.service.ConsumerService;
 
 @Controller
+@SessionAttributes("Name")
 public class LoginController {
 	@Autowired
 	 ConsumerService consumerService;
@@ -35,14 +38,18 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/loginSuccess",method=RequestMethod.POST)
-	public ModelAndView loginProcess(HttpServletRequest request,HttpServletResponse response,@ModelAttribute("login") Login log)
+	public ModelAndView loginProcess(HttpServletRequest request,HttpServletResponse response,HttpSession session,@ModelAttribute("login") Login log)
 	{
+		 
 		ModelAndView mv=null;
 		GovtConsumer cons=consumerService.login(log);
 		if(cons!=null)
 		{
-			mv=new ModelAndView("welcome");
+			
+			mv=new ModelAndView("complain");
+			session=request.getSession();
 			mv.addObject("Name",cons.getName());
+			session.setAttribute("Name", cons.getName());
 			mv.addObject("sub",cons.getSuburb());
 //			List<AreaComplaints> ac=consumerDao.selection();
 //			//ModelAndView mv=new ModelAndView("welcome");
@@ -57,7 +64,7 @@ public class LoginController {
 		return mv;
 	} 
 	
-	@RequestMapping(value="/login", method=RequestMethod.GET)
+	@RequestMapping(value="/logint", method=RequestMethod.GET)
 	public ModelAndView showComplaints(HttpServletRequest request,HttpServletResponse response)
 	{
 		

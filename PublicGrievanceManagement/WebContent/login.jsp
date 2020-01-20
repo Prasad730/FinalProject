@@ -118,7 +118,6 @@ Not a member yet?</a>
 
 
 
-
   <style>
     .carousel-inner img {
       width: 100%;
@@ -177,7 +176,7 @@ Not a member yet?</a>
 
 
 
-<body style= "background-image: linear-gradient(to top, skyblue 20% ,lavender 80%)">
+<body style= "background-image: linear-gradient(to top, skyblue 20% ,lavender 80%)" ">
  
 
   <div class="jumbotron text-white " style="background-color:rgb(24, 53, 100)">
@@ -228,13 +227,14 @@ Not a member yet?</a>
             <!-- The slideshow -->
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="img/one.jpg" alt="Los Angeles" width="400" height="500">
+                   <img src="${pageContext.request.contextPath}/resources/one.jpg" alt="Los Angeles" width="400" height="500">
+                
               </div>
               <div class="carousel-item">
-                <img src="img/two.jpg" alt="Chicago" width="400" height="500">
+             <img src="${pageContext.request.contextPath}/resources/two.jpg" alt="Los Angeles" width="400" height="500">
               </div>
               <div class="carousel-item">
-                <img src="img/three.jpeg" alt="New York" width="400" height="500">
+              <img src="${pageContext.request.contextPath}/resources/three.jpg" alt="Los Angeles" width="400" height="500">
               </div>
             </div>
 
@@ -254,7 +254,7 @@ Not a member yet?</a>
 
         <div class="col-sm-5">
 
-          <form class="form-horizontal" modelAttribute="login" action="./loginSuccess" method="post">
+          <form class="form-horizontal" modelAttribute="login" action="./loginSuccess" method="post" >
             <fieldset>
               <legend>
                 <h1 style="font-family:sans sherif">Login Form</h1>

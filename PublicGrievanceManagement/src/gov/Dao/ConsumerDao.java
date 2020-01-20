@@ -33,7 +33,7 @@ public class ConsumerDao implements IConsumerDao {
 	}
 	
 	public void complainRegister(Complaints consumer) {
-		 String sql="insert into Complaints values(?,?,?,?,?,?,?)";
+		 String sql="insert into Complaint values(?,?,?,?,?,?,?)";
 		  jdbcTemplate.update(sql, new Object[]
 		  {consumer.getComplainId(),consumer.getConsumerName(),consumer.getComplain_Category()
 		  ,consumer.getComplain_Heading(),consumer.getDescription(),consumer.getImage(),consumer.getAffected_Address()});
