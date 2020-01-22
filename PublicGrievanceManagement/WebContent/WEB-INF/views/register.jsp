@@ -583,7 +583,7 @@ margin-left: -157px;
 
     <h1 align="center" style="font-family:sans sherif">Registration Form</h1>
     <table align="center" width="650" height="600">
-      <form action="./register" onsubmit="return finals()" modelAttribute="consumer" method="get">
+      <form action="./regsuccess" onsubmit="return finals()" modelAttribute="consumer" method="get">
         <tr>
           <td> <label for="usr">
               <h4>Name:</h4>
@@ -641,7 +641,7 @@ margin-left: -157px;
               <h4>City:</h4>
             </label></td>
           <td>
-            <input type="text" class="form-control" id="city" name="city" placeholder="Enter City" required
+            <input type="text" class="form-control" id="city" name="City" placeholder="Enter City" required
               onblur="check_city()"><span id="scity"></span></td>
         </tr>
 
@@ -666,7 +666,7 @@ margin-left: -157px;
           <td><label for="pwd">
               <h4>Pincode:</h4>
             </label></td>
-          <td> <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Enter Pincode" required
+          <td> <input type="text" class="form-control" id="pincode" name="Pincode" placeholder="Enter Pincode" required
               onblur="check_pincode()"><span id="spincode"></span></td>
         </tr>
 

@@ -13,6 +13,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 
+import gov.model.Admin;
 import gov.model.AreaComplaints;
 import gov.model.Complaints;
 import gov.model.GovtConsumer;
@@ -55,31 +56,12 @@ public class ConsumerDao implements IConsumerDao {
 		  List<AreaComplaints> ls=jdbcTemplate.query(sql,AreaMapper());
 		  return ls;
 	}*/
-	public List<AreaComplaints> selection(){  
-		 return jdbcTemplate.query("select * from AreaComplaints",new ResultSetExtractor<List<AreaComplaints>>(){  
-		      
-		     public List<AreaComplaints> extractData(ResultSet rs) throws SQLException,  
-		            DataAccessException {  
-		      
-		        List<AreaComplaints> list=new ArrayList<AreaComplaints>();  
-		        while(rs.next()){  
-		        	AreaComplaints ac=new AreaComplaints();  
-		        	//ac.setAreaId(rs.getInt(0));
-		    		ac.setAreaName(rs.getString("AreaName"));
-//		    		ac.setPincode(rs.getString("Pincode"));
-//		    		ac.setSubAreaId(rs.getInt("SubAreaId"));
-//		    		ac.setSubAreaName(rs.getString("SubAreaName"));
-//		    		ac.setComplainId(rs.getInt("ComplainId"));
-//		    		ac.setComplain_Category(rs.getString("Complain_Category"));
-//		    		ac.setComplain_Heading(rs.getString("Complain_Heading"));
-//		    		ac.setDescription(rs.getString("Description"));
-		    		 
-		        list.add(ac);  
-		        }  
-		        return list;  
-		        }  
-		    });  
-		  }  
+//	public Admin selection(Admin consumer){  
+//String sql="select * from Admin where Admin_Name='"+consumer.getAdmin_Name()+"'and Admin_Password='"+consumer.getAdmin_Password()+"'";
+//		
+//		List<Admin> con=jdbcTemplate.query(sql,new AdminMapper());
+//		return con.size() > 0 ? con.get(0) : null;
+//		  }  
 }
 class ConsumerMapper implements RowMapper<GovtConsumer>
 {
@@ -116,3 +98,18 @@ class ConsumerMapper implements RowMapper<GovtConsumer>
 //	}
 //	
 //}
+
+
+/*class Admin1Mapper implements RowMapper<Admin>
+{
+
+	public Admin mapRow(ResultSet rs, int a) throws SQLException {
+		Admin cons=new Admin();
+		cons.setAdmin_Name(rs.getString("Admin_Name"));
+		cons.setAdmin_Password(rs.getString("Admin_Password"));
+		cons.setAdmin_Email(rs.getString("Admin_Email"));;
+		cons.setComplain_Category(rs.getString("Complain_Category"));
+		
+		return cons;
+	}
+}*/
