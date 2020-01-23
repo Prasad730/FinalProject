@@ -14,8 +14,14 @@
 <body>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
- 
+<script>
+function alertt()
+{
+	
+alert("Status updated successfully");
+	}
+</script>
+ <form action="./showstat" modelAttribute="showstatus" method="post" onsubmit="alertt();">
  
 <table class="table table-hover" border="2px">
   <thead>
@@ -28,15 +34,16 @@
       <th >Consumer Description</th>
        <th>Affected Address</th>
         <th >Image</th>
-       <th>Affected Address</th>
-      <th>Image</th>
+       
+      
+     
     </tr>
   </thead>
 
 
 
 
-  <c:forEach var="l" items="${a}">
+  <c:forEach var="l" items="${a}" varStatus="loop">
  
     <tr class="table-primary">
       
@@ -44,13 +51,22 @@
       <td>${l.getConsumerName()}</td>
       <td>${l.getComplain_Category()}</td>
       <td>${l.getComplain_Heading()}</td>
-      <td>${l.getDescription()}</td>
+      <td>${l.getComplainId()}</td>
       <td>${l.getAffected_Address()}</td>
       <td><img src="${pageContext.request.contextPath}/resources/images/${l.getImage()}" style="width:20%"></td>
+      <td><input type="text" name="Status" >
+      <c:forEach var="lv" items="${ac}" varStatus="loop">
+      <td><input type="hidden" name="ComplainId" value="${lv.getComplainId()}"></td>
+      </c:forEach>
+      
+       
     </tr>
-    
+    <input type="text" name="Status" value="${l.getComplainId()}">
 </c:forEach>
+
 </table> 
+<div align="center"><input type="submit" value="Act on complaints"></div>
+</form>
 <!-- <c:forEach var="window" items="${a}">
     <c:out value="${window}"/> 
 </c:forEach> -->

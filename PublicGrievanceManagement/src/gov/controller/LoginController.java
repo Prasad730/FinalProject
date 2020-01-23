@@ -56,6 +56,7 @@ public class LoginController {
 			mv.addObject("Name",cons.getName());
 			session.setAttribute("Name", cons.getName());
 			mv.addObject("sub",cons.getSuburb());
+			mv.addObject("consid",cons.getConsumerId());
 //			List<AreaComplaints> ac=consumerDao.selection();
 //			//ModelAndView mv=new ModelAndView("welcome");
 //			mv.addObject("AreaName",ac.get(0));
@@ -92,7 +93,8 @@ public class LoginController {
 			
 		
 				mv.addObject("a",ac);
-		
+				mv.addObject("ac",ac);
+				
 			//mv.addObject("ComplainId",ac.get(a));
 			/*mv.addObject("ConsumerName",ac.getConsumerName());
 			mv.addObject("ComplainCategory",ac.getComplain_Category());
@@ -121,7 +123,7 @@ public class LoginController {
 		return mv;
 	}
 	
-	@RequestMapping(value="/adminlog", method=RequestMethod.POST)
+	/*@RequestMapping(value="/adminlog", method=RequestMethod.POST)
 	public ModelAndView showLog(HttpServletRequest request,HttpServletResponse response,@ModelAttribute("Alogin") Admin ad)
 	{
 		List<AdminLog> ac=adminDao.selected(ad);
@@ -136,5 +138,5 @@ public class LoginController {
 		mv.addObject("Affected_Address",((AdminLog) ac).getAffected_Address());
 		return mv;
 	
-}
+}*/
 }

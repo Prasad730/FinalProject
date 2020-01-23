@@ -202,6 +202,9 @@ function getimage()
          <li class="nav-item">
           <a class="nav-link" href="login.jsp"><h3>Logout</h3></a>
         </li>
+         <li class="nav-item">
+          <a class="nav-link" href="viewmycomplain.jsp"><h3>My Complaints</h3></a>
+        </li>
        </ul>
  		<p class="text-white" align="right"><b>Welcome </b><label>${Name}</label></p>
      </nav>
@@ -261,7 +264,11 @@ function getimage()
            
           </tr>
           
-             
+              <tr>
+            
+            <td><input type="hidden"  id="hid" name="ConsumerId" value="${consid }"> </td>
+           
+          </tr>
 
           <tr>
               <td></td>

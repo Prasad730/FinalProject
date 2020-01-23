@@ -3,6 +3,8 @@ package gov.model;
 public class AdminLog {
 
 	private int ComplainId;
+	private int ConsumerId;
+	
 	private String ConsumerName;
 	private String Complain_Category;
 	private String Complain_Heading;
@@ -11,6 +13,12 @@ public class AdminLog {
 	private String Affected_Address;
 	private String Admin_Name;
 	private String Admin_Email;
+	public int getConsumerId() {
+		return ConsumerId;
+	}
+	public void setConsumerId(int consumerId) {
+		ConsumerId = consumerId;
+	}
 	public int getComplainId() {
 		return ComplainId;
 	}

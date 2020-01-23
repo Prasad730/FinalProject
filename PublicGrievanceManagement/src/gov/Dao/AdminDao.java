@@ -30,7 +30,7 @@ public class AdminDao {
 		return con.size() > 0 ? con.get(0) : null;
 		  }  
 	
-	public List<AdminLog> sellpected(Admin ad){  
+	/*public List<AdminLog> sellpected(Admin ad){  
 		 return jdbcTemplate.query("select * from AdminLog where Admin_Name='"+ad.getAdmin_Name() +"'",new ResultSetExtractor<List<AdminLog>>(){  
 		      
 		     public List<AdminLog> extractData(ResultSet rs) throws SQLException,  
@@ -52,7 +52,7 @@ public class AdminDao {
 		        return list;  
 		        }  
 		    });  
-		  }  
+		  }  */
 	
 	public List<AdminLog> selected(Admin consumer){  
 		String sql="select * from AdminLog where Admin_Name='"+consumer.getAdmin_Name()+"'";
@@ -68,6 +68,7 @@ class AdminMapper implements RowMapper<Admin>
 
 	public Admin mapRow(ResultSet rs, int a) throws SQLException {
 		Admin cons=new Admin();
+		
 		cons.setAdmin_Name(rs.getString("Admin_Name"));
 		cons.setAdmin_Password(rs.getString("Admin_Password"));
 		cons.setAdmin_Email(rs.getString("Admin_Email"));;

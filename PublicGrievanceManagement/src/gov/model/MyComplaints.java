@@ -1,33 +1,21 @@
 package gov.model;
 
-import java.sql.Blob;
-
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Indexed;
-
-@Component
-public class Complaints {
+public class MyComplaints {
 
 	private int ComplainId;
-	private int ComplaindId1;
+	private int ConsumerId;
 	private String ConsumerName;
-	private int AreaId;
-	private int SubAreaId;
 	private String Complain_Category;
 	private String Complain_Heading;
 	private String Description;
 	private String Image;
 	private String Affected_Address;
-	private int ConsumerId;
-	
-	
-	
-	
-	public int getComplaindId1() {
-		return ComplaindId1;
+	private String Status;
+	public int getComplainId() {
+		return ComplainId;
 	}
-	public void setComplaindId1(int complaindId1) {
-		ComplaindId1 = complaindId1;
+	public void setComplainId(int complainId) {
+		ComplainId = complainId;
 	}
 	public int getConsumerId() {
 		return ConsumerId;
@@ -35,36 +23,11 @@ public class Complaints {
 	public void setConsumerId(int consumerId) {
 		ConsumerId = consumerId;
 	}
-	public String getAffected_Address() {
-		return Affected_Address;
-	}
-	public void setAffected_Address(String affected_Address) {
-		Affected_Address = affected_Address;
-	}
-	public int getComplainId() {
-		return ComplainId;
-	}
-	public void setComplainId(int complainId) {
-		ComplainId = complainId;
-	}
-	public int getAreaId() {
-		return AreaId;
-	}
-	
 	public String getConsumerName() {
 		return ConsumerName;
 	}
 	public void setConsumerName(String consumerName) {
 		ConsumerName = consumerName;
-	}
-	public void setAreaId(int areaId) {
-		AreaId = areaId;
-	}
-	public int getSubAreaId() {
-		return SubAreaId;
-	}
-	public void setSubAreaId(int subAreaId) {
-		SubAreaId = subAreaId;
 	}
 	public String getComplain_Category() {
 		return Complain_Category;
@@ -89,6 +52,25 @@ public class Complaints {
 	}
 	public void setImage(String image) {
 		Image = image;
+	}
+	public String getAffected_Address() {
+		return Affected_Address;
+	}
+	public void setAffected_Address(String affected_Address) {
+		Affected_Address = affected_Address;
+	}
+	public String getStatus() {
+		return Status;
+	}
+	public void setStatus(String status) {
+		Status = status;
+	}
+	@Override
+	public String toString() {
+		return "MyComplaints [ComplainId=" + ComplainId + ", ConsumerId=" + ConsumerId + ", ConsumerName="
+				+ ConsumerName + ", Complain_Category=" + Complain_Category + ", Complain_Heading=" + Complain_Heading
+				+ ", Description=" + Description + ", Image=" + Image + ", Affected_Address=" + Affected_Address
+				+ ", Status=" + Status + "]";
 	}
 	
 	
